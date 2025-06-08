@@ -2,27 +2,29 @@ package backend.app.models.Dipositivos.internos;
 
 import backend.app.models.Dipositivos.DispositivoBase;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 
-@Entity @Table(name = "camaras")
-public class Camara extends DispositivoBase {
+@AllArgsConstructor
+@Entity @Table(name = "luces")
+public class Luz extends DispositivoBase {
 
     @Override
     public void encender() {
-        System.out.println("Camara encendido");
+        System.out.println("Luz encendida");
     }
 
     @Override
     public void apagar() {
-        System.out.println("Camara apagado");
+        System.out.println("Luz apagada");
     }
 
     @Override
     public void ajustar() {
-        System.out.println("Camara ajustado");
+        System.out.println("Luz ajustada");
     }
 
     @Override
     public void programar() {
-        System.out.println("Camara programado");
+        System.out.println("Luz programada");
     }
 }

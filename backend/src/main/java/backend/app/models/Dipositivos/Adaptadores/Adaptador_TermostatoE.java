@@ -1,35 +1,39 @@
 package backend.app.models.Dipositivos.Adaptadores;
 
 import backend.app.models.Dipositivos.DispositivoBase;
-import backend.app.models.Dipositivos.externos.CamaraExterna;
+import backend.app.models.Dipositivos.externos.TermostatoExterna;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 
-@Entity @Table(name = "camaras_externas")
-public class Adaptador_CamaraE extends DispositivoBase {
+@AllArgsConstructor
+@Entity @Table(name = "termostatos_externos")
+public class Adaptador_TermostatoE extends DispositivoBase {
 
     @JsonIgnore
     @Transient
-    private CamaraExterna camaraExterna;
+    private TermostatoExterna termostatoExterna;
+
 
     @Override
     public void encender() {
-        camaraExterna.on();
+        termostatoExterna.on();
     }
 
     @Override
     public void apagar() {
-        camaraExterna.off();
+        termostatoExterna.off();
     }
 
     @Override
     public void ajustar() {
-        camaraExterna.dim();
+        termostatoExterna.dim();
     }
 
     @Override
     public void programar() {
-        camaraExterna.schedule();
+        termostatoExterna.schedule();
     }
 
 }

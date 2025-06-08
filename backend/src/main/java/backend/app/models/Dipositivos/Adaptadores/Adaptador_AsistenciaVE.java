@@ -4,7 +4,9 @@ import backend.app.models.Dipositivos.DispositivoBase;
 import backend.app.models.Dipositivos.externos.AsistenteVirtualExterna;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 @Entity @Table(name = "asistentes_externos")
 public class Adaptador_AsistenciaVE extends DispositivoBase {
 

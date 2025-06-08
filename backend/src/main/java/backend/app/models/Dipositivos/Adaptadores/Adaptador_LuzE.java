@@ -1,37 +1,39 @@
 package backend.app.models.Dipositivos.Adaptadores;
 
 import backend.app.models.Dipositivos.DispositivoBase;
-import backend.app.models.Dipositivos.externos.TermostatoExterna;
-
+import backend.app.models.Dipositivos.externos.LuzExterna;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 
-@Entity @Table(name = "termostatos_externos")
-public class Adaptador_TermostatoE extends DispositivoBase {
+@AllArgsConstructor
+@Entity @Table(name = "luces_externas")
+public class Adaptador_LuzE extends DispositivoBase {
 
     @JsonIgnore
     @Transient
-    private TermostatoExterna termostatoExterna;
+    private LuzExterna luzExterna = new LuzExterna();
 
 
     @Override
     public void encender() {
-        termostatoExterna.on();
+        luzExterna.on();
     }
 
     @Override
     public void apagar() {
-        termostatoExterna.off();
+        luzExterna.off();
     }
 
     @Override
     public void ajustar() {
-        termostatoExterna.dim();
+        luzExterna.dim();
     }
 
     @Override
     public void programar() {
-        termostatoExterna.schedule();
+        luzExterna.schedule();
     }
 
 }
+

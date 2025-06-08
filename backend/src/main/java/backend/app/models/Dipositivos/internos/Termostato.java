@@ -2,7 +2,9 @@ package backend.app.models.Dipositivos.internos;
 
 import backend.app.models.Dipositivos.DispositivoBase;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 @Entity @Table(name = "termostatos")
 public class Termostato extends DispositivoBase {
 

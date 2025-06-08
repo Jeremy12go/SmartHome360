@@ -5,9 +5,10 @@ import backend.app.models.Usuario.Observador;
 import backend.app.models.Usuario.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Data
+@Data @AllArgsConstructor
 @Entity @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class DispositivoBase implements Dispositivo {
 

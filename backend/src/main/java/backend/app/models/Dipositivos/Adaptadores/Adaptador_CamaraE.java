@@ -1,37 +1,37 @@
 package backend.app.models.Dipositivos.Adaptadores;
 
 import backend.app.models.Dipositivos.DispositivoBase;
-import backend.app.models.Dipositivos.externos.LuzExterna;
+import backend.app.models.Dipositivos.externos.CamaraExterna;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 
-@Entity @Table(name = "luces_externas")
-public class Adaptador_LuzE extends DispositivoBase {
+@AllArgsConstructor
+@Entity @Table(name = "camaras_externas")
+public class Adaptador_CamaraE extends DispositivoBase {
 
     @JsonIgnore
     @Transient
-    private LuzExterna luzExterna = new LuzExterna();
-
+    private CamaraExterna camaraExterna;
 
     @Override
     public void encender() {
-        luzExterna.on();
+        camaraExterna.on();
     }
 
     @Override
     public void apagar() {
-        luzExterna.off();
+        camaraExterna.off();
     }
 
     @Override
     public void ajustar() {
-        luzExterna.dim();
+        camaraExterna.dim();
     }
 
     @Override
     public void programar() {
-        luzExterna.schedule();
+        camaraExterna.schedule();
     }
 
 }
-
