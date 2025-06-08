@@ -1,12 +1,19 @@
 package backend.app.models.Dipositivos.internos;
 
 import backend.app.models.Dipositivos.DispositivoBase;
+import backend.app.models.Usuario.Usuario;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 @Entity @Table(name = "luces")
 public class Luz extends DispositivoBase {
+
+
+    public Luz(String id, String nombre, Usuario usuario) {
+        super(id, nombre, usuario);
+    }
+
+    public Luz() {}
+
 
     @Override
     public void encender() {

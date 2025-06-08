@@ -1,12 +1,19 @@
 package backend.app.models.Dipositivos.internos;
 
 import backend.app.models.Dipositivos.DispositivoBase;
+import backend.app.models.Usuario.Usuario;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 @Entity @Table(name = "camaras")
 public class Camara extends DispositivoBase {
+
+
+    public Camara(String id, String nombre, Usuario usuario) {
+        super(id, nombre, usuario);
+    }
+
+    public Camara() {}
+
 
     @Override
     public void encender() {

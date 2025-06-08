@@ -1,10 +1,19 @@
 package backend.app.models.Dipositivos.internos;
 
 import backend.app.models.Dipositivos.DispositivoBase;
+import backend.app.models.Usuario.Usuario;
 import jakarta.persistence.*;
 
 @Entity @Table(name = "asistentesvirtuales")
 public class AsistenteVirtual extends DispositivoBase {
+
+
+    public AsistenteVirtual(String id, String nombre, Usuario usuario) {
+        super(id, nombre, usuario);
+    }
+
+    public AsistenteVirtual() {}
+
 
     @Override
     public void encender() {

@@ -5,10 +5,9 @@ import backend.app.models.Usuario.Observador;
 import backend.app.models.Usuario.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Data @AllArgsConstructor
+@Data
 @Entity @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class DispositivoBase implements Dispositivo {
 
@@ -27,6 +26,15 @@ public abstract class DispositivoBase implements Dispositivo {
 
     @Transient
     protected Observador suscriptor;
+
+
+    protected DispositivoBase(String id, String nombre, Usuario usuario) {
+        this.id = id;
+        this.nombre = nombre;
+        this.usuario = usuario;
+    }
+
+    protected DispositivoBase() {}
 
     // Métodos default para Observer y modo.
     @Override
