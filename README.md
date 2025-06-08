@@ -26,6 +26,12 @@ El sistema soporta múltiples marcas mediante adaptadores y permite crear rutina
 
 ---
 
+## Requisitos
+Antes de ejecutar la aplicación, se debe tener instalado:
+- [Docker desktop](https://docs.docker.com/desktop/)
+
+---
+
 ## Instalación y ejecución (con Docker)
 
 ### 1. Clona el proyecto
