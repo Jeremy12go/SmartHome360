@@ -24,6 +24,10 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.listar());
     }
 
+    @GetMapping("/{id}")
+    public Usuario getUsuario(@PathVariable String id) {
+        return usuarioService.buscarPorId(id);
+    }
 
     @PostMapping("/{id}/comando")
     public ResponseEntity<String> ejecutarComando(

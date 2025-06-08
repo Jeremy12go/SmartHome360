@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { obtenerL } from '../../APIs/luzAPI.js';
-import { obtenerLE } from '../../APIs/luzExternaAPI.js'
-import { ejecutarComando, cambiarModo } from '../../APIs/usuariosAPI.js';
+import { obtenerL } from '../APIs/luzAPI.js';
+import { obtenerLE } from '../APIs/luzExternaAPI.js'
+import { ejecutarComando, cambiarModo } from '../APIs/usuariosAPI.js';
 import { useParams } from 'react-router-dom';
 
 export default function ControlLuz() {
@@ -31,13 +31,14 @@ export default function ControlLuz() {
 
   return (
     <div>
-      <h3>Control de luces</h3>
       {luces.map((luz) => (
         <div key={luz.id}>
-          <strong>{luz.id}</strong> ({luz.ubicacion})
-          <button onClick={() => handleComando(luz.id, 'encender', 'luz')}>Encender</button>
-          <button onClick={() => handleComando(luz.id, 'apagar', 'luz')}>Apagar</button>
-          <select onChange={(e) => handleModo(luz.id, e.target.value, 'luz')}>
+          <strong>{luz.nombre}   </strong>
+          <button className="btn btn-primary" onClick={() => handleComando(luz.id, 'encender', 'luz')}>Encender</button>
+          <button className="btn btn-primary" onClick={() => handleComando(luz.id, 'programar', 'luz')}>Programar</button>
+          <button className="btn btn-primary" onClick={() => handleComando(luz.id, 'ajustar', 'luz')}>Ajustar</button>
+          <button className="btn btn-danger" onClick={() => handleComando(luz.id, 'apagar', 'luz')}>Apagar</button>
+          <select className="btn btn-secondary" onChange={(e) => handleModo(luz.id, e.target.value, 'luz')}>
             <option value="">Cambiar modo</option>
             <option value="noche">Noche</option>
             <option value="ahorro">Ahorro</option>
@@ -48,10 +49,12 @@ export default function ControlLuz() {
       ))}
       {lucesE.map((luz) => (
           <div key={luz.id}>
-            <strong>{luz.id}</strong> ({luz.ubicacion})
-            <button onClick={() => handleComando(luz.id, 'encender','luz externa')}>Encender</button>
-            <button onClick={() => handleComando(luz.id, 'apagar','luz externa')}>Apagar</button>
-            <select onChange={(e) => handleModo(luz.id, e.target.value, 'luz externa')}>
+            <strong>{luz.nombre}   </strong>
+            <button className="btn btn-primary" onClick={() => handleComando(luz.id, 'encender', 'luz externa')}>Encender</button>
+            <button className="btn btn-primary" onClick={() => handleComando(luz.id, 'programar', 'luz externa')}>Programar</button>
+            <button className="btn btn-primary" onClick={() => handleComando(luz.id, 'ajustar', 'luz externa')}>Ajustar</button>
+            <button className="btn btn-danger" onClick={() => handleComando(luz.id, 'apagar', 'luz externa')}>Apagar</button>
+            <select className="btn btn-secondary" onChange={(e) => handleModo(luz.id, e.target.value, 'luz externa')}>
               <option value="">Cambiar modo</option>
               <option value="noche">Noche</option>
               <option value="ahorro">Ahorro</option>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL = 'http://localhost:8080/api/asistentes';
+const API_URL = 'http://localhost:8080/api';
 
-export const registrarAV = (dispositivo) => axios.post(API_URL, dispositivo);
-export const obtenerAV = () => axios.get(API_URL);
+export const registrarAV = (userId, dispositivo) => axios.post(`${API_URL}/usuarios/${userId}/asistentes`, dispositivo);
+export const obtenerAV = (userId) => axios.get(`${API_URL}/usuarios/${userId}/asistentes`);

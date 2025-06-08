@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {getUsuarios} from '../APIs/usuariosAPI';
+import {getUsuarios} from '../APIs/usuariosAPI.js';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Lobby.css';
 import logo from '../assets/Logo.png'
@@ -13,7 +13,7 @@ export default function Lobby() {
     }, []);
 
     const handleSelect = (usuarioId) => {
-        navigate(`/control/${usuarioId}`);
+        navigate(`/dispositivos/${usuarioId}`);
     };
 
     return (
